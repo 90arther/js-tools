@@ -47,5 +47,14 @@ xhr.send(null);
 //responseXML:如果响应的内容类型是"text/xml"或"application/xml"，这个属性中将保存包含着响应数据的XML DOM文档。
 //status:响应的HTTP状态
 //statusText:HTTP状态的说明。
+xhr.onreadystatechange =  function(){
+    if(xhr.readyState == 4){
+        if((xhr.status >= 200 && xhr.status < 300)|| xhr.status == 304){
+            alert(xhr.responseText);
+        }else{
+            alert("Request was unsuccessful:" + xhr.status);
+        }
+    }
+};
 
 

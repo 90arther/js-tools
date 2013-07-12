@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+<p onclick="ajaxstar()"> click me to show demo.</p>
+<script type="text/javascript">
+    //在IE7、Firefox、Opera、Chrome和safari都支持原生的XHR对象。
+    var xhr = new XMLHttpRequest();
+    //以上两种结合在一起就支持主流浏览器（IE6/7/8/9/10、Firefox、Opera、Chrome和safari等)
+    function createXHR(){
+        if(typeof XMLHttpRequest != "undefined"){
+            return new XMLHttpRequest();
+        }else if(typeof ActiveXObject != "underfined"){
+            var versions = ["MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp"];
+            for(var i = 0,len = versions.length;i<len;i++){
+                try{
+                    var xhr = new ActiveXObject(version[i]);
+                    arguments.callee.activeXString = version[i];
+                    return xhr;
+                }catch(ex){
+                    //跳过
+                }
+            }
+            return new ActiveXObject(arguments.callee.activeXString);
+        }else{
+            throw new Error("No XHR object available.");
+        }
+    }
+    //使用下列创建XHR对象：
+    var xhr = createXHR();
+    function ajaxstar(){
+        xhr.open("get","test.txt",true);
+        xhr.send(null);
+        xhr.onreadystatechange =  function(){
+            if(xhr.readyState == 4){
+                if((xhr.status >= 200 && xhr.status < 300)|| xhr.status == 304){
+                    alert(xhr.responseText);
+                }else{
+                    alert("Request was unsuccessful:" + xhr.status);
+                }
+            }
+        };
+    }
+</script>
+</body>
+</html>
