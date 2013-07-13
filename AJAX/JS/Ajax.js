@@ -6,6 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 //以上两种结合在一起就支持主流浏览器（IE6/7/8/9/10、Firefox、Opera、Chrome和safari等)
+/*
 function createXHR(){
     if(typeof XMLHttpRequest != "undefined"){
         return new XMLHttpRequest();
@@ -23,6 +24,15 @@ function createXHR(){
         return new ActiveXObject(arguments.callee.activeXString);
     }else{
         throw new Error("No XHR object available.");
+    }
+}
+*/
+function createXHR(){
+    if(typeof XMLHttpRequest != "undefined"){
+        return new XMLHttpRequest();
+    }else {
+        var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        return xhr;
     }
 }
 

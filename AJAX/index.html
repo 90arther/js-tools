@@ -6,18 +6,22 @@
 </head>
 <body>
 <p onclick="ajaxstar()"> click me to show demo.</p>
-<div id="con"></div>
+<div id="xml"></div>
+<div id="responseText"></div>
 <script src="js/ajax.js"></script>
 <script type="text/javascript">
     var xhr = createXHR();
-    var con = document.getElementById("con");
+    var xml = document.getElementById("xml");
+    var responseText = document.getElementById("responseText");
     function ajaxstar(){
         xhr.open("get","inc.html",true);
         xhr.send(null);
         xhr.onreadystatechange =  function(){
             if(xhr.readyState == 4){
                 if((xhr.status >= 200 && xhr.status < 300)|| xhr.status == 304){
-                    con.innerHTML =  xhr.responseText;
+                    //alert(xhr.statusText);
+                    xml.innerHTML =  xhr.responseXML;
+                    responseText.innerHTML = xhr.responseText;
                 }else{
                     alert("Request was unsuccessful:" + xhr.status);
                 }
