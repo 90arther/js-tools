@@ -1,49 +1,183 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title></title>
-</head>
-<body>
-<p onclick="ajaxstar()"> click me to show demo.</p>
-<script type="text/javascript">
-    //在IE7、Firefox、Opera、Chrome和safari都支持原生的XHR对象。
-    var xhr = new XMLHttpRequest();
-    //以上两种结合在一起就支持主流浏览器（IE6/7/8/9/10、Firefox、Opera、Chrome和safari等)
-    function createXHR(){
-        if(typeof XMLHttpRequest != "undefined"){
-            return new XMLHttpRequest();
-        }else if(typeof ActiveXObject != "underfined"){
-            var versions = ["MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp"];
-            for(var i = 0,len = versions.length;i<len;i++){
-                try{
-                    var xhr = new ActiveXObject(version[i]);
-                    arguments.callee.activeXString = version[i];
-                    return xhr;
-                }catch(ex){
-                    //跳过
-                }
-            }
-            return new ActiveXObject(arguments.callee.activeXString);
-        }else{
-            throw new Error("No XHR object available.");
-        }
-    }
-    //使用下列创建XHR对象：
-    var xhr = createXHR();
-    function ajaxstar(){
-        xhr.open("get","test.txt",true);
-        xhr.send(null);
-        xhr.onreadystatechange =  function(){
-            if(xhr.readyState == 4){
-                if((xhr.status >= 200 && xhr.status < 300)|| xhr.status == 304){
-                    alert(xhr.responseText);
-                }else{
-                    alert("Request was unsuccessful:" + xhr.status);
-                }
-            }
-        };
-    }
-</script>
-</body>
-</html>
+<!-- top -->
+<div id="g_top_con" class="mod_st"><script type="text/javascript"></script></div>
+<!-- wrap -->
+<div class="act_wrapper1">
+    <div class="act_wrapper2">
+        <div class="wrap">
+            <!-- header-->
+            <div class="header pos_r yahei">
+                <h1 class="hide">狂刃 玩创新格斗 赢大奖</h1>
+                <a href="http://kr.ejoy.com/" class="kuangren_logo link" target="_blank"></a>
+                <a href="http://www.17173.com/" class="a17173_logo link" target="_blank"></a>
+                <ul class="navlink">
+                    <li><a href="http://kr.ejoy.com/" target="_blank">游戏官网</a></li>
+                    <li><a href="http://kr.ejoy.com/introduction.html" target="_blank">游戏专区</a></li>
+                    <li><a href="http://kr.ejoy.com/data/news/data_code/2013042814.html" target="_blank">游戏下载</a></li>
+                    <li><a href="http://kr.bbs.ejoy.com/" target="_blank">游戏论坛</a></li>
+                    <li><a href="http://kr.ejoy.com/data/news/data_code/2013052229.html" target="_blank">获奖名单</a></li>
+                </ul>
+                <p class="active_date">活动时间：7月15日-7月29日</p>
+            </div>
+            <!-- content-->
+            <div class="content yahei pos_r">
+                <h2 class="reset_gedou">重新定义你的格斗《狂刃》7月23日不删档内测</h2>
+                <div class="share">
+                    <!-- Baidu Button BEGIN -->
+                    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                        <a class="bds_tsohu"></a>
+                        <a class="bds_qzone"></a>
+                        <a class="bds_tsina"></a>
+                        <a class="bds_tqq"></a>
+                        <a class="bds_kaixin001"></a>
+                        <a class="bds_renren"></a>
+                        <a class="bds_t163"></a>
+                        <span class="bds_more">更多</span>
+                    </div>
+                    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=0" ></script>
+                    <script type="text/javascript" id="bdshell_js"></script>
+                    <script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+                    </script>
+                    <!-- Baidu Button END -->
+                </div>
+                <div class="video">
+                    <embed src="http://17173.tv.sohu.com/playercs2008.swf?Flvid=1620089" quality="high" width="481" height="306" align="middle" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash">
+                </div>
+                <div class="activation_vote">
+                    <a href="http://kr.ejoy.com/activation.php" title="领取激活码" target="_blank" class="activation">领取激活码</a>
+                    <a href="https://id.ejoy.com/" title="给狂刃投票" target="_blank" class="vote">给狂刃投票</a>
+                </div>
+                <div class="rules">
+                    <h3>活动规则</h3>
+                    <p>领取珍惜激活码参加《狂刃》7.23不删档测试，并给《狂刃》投票及留言，即有机会获得丰富数码大奖及购物卡。奖品将在活动结束后随即抽取幸运玩家。</p>
+                </div>
+                <div class="welfare">
+                    <h3>活动奖品</h3>
+                    <ul>
+                        <li><img src="images/welfare1.jpg" width="130" height="140" alt="iPhone5 X1"/><p><a href="#">iPhone5 X1</a></p></li>
+                        <li><img src="images/welfare2.jpg" width="129" height="140" alt="iPad mini X2"/><p><a href="#">iPad mini X2</a></p></li>
+                        <li><img src="images/welfare3.jpg" width="130" height="140" alt="京东100卡X100"/><p><a href="#">京东100卡X100</a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="comment_wrap">
+    <div class="comment">
+        <div class="com_panel l pos_r">
+            <div class="com_bg_left">
+                <div class="com_bg_right">
+                    <h3 class="link">给狂刃的留言</h3>
+                    <ul>
+                        <li class="article_wrap">
+                            <textarea>不超过70个字。</textarea>
+                        </li>
+                        <li>
+                            <dt>昵称：</dt>
+                            <dd>
+                                <input maxlength="20" name="orderId" type="text"/>
+                            </dd>
+                        </li>
+                        <li>
+                            <dt>我的17173帐号：</dt>
+                            <dd>
+                                <input maxlength="20" name="verifyCode" type="text"/>
+                            </dd>
+                        </li>
+                        <li>
+                            <dt>真实姓名：</dt>
+                            <dd>
+                                <input maxlength="20" name="verifyCode" type="text"/>
+                            </dd>
+                        </li>
+                        <li>
+                            <dt>奖品邮寄地址：</dt>
+                            <dd>
+                                <input maxlength="20" name="verifyCode" type="text"/>
+                            </dd>
+                        </li>
+                        <li>
+                            <dt>联系电话：</dt>
+                            <dd>
+                                <input maxlength="20" name="verifyCode" type="text"/>
+                            </dd>
+                        </li>
+                        <li>
+                            <dt>QQ：</dt>
+                            <dd>
+                                <input maxlength="15" name="verifyCode" type="text"/>
+                            </dd>
+                        </li>
+                        <li>
+                            <dd class="err" id="vercode_err_msg"></dd>
+                        </li>
+                    </ul>
+                    <a class="submit_btn link" href="javascript:void(0);">提交</a>
+                </div>
+            </div>
+        </div>
+        <div class="players r pos_r f14">
+            <div class="players_bg_left">
+                <div class="players_bg_right">
+                    <h3 class="link">玩家留言</h3>
+                    <div class="com">
+                        <ul>
+                            <li>
+                                <h4>
+                                    <span class="player_name">毒狼：</span>
+                                    <span class="date">2013-02-07 20:08:16</span>
+                                </h4>
+                                <p>河北话：爱不在乎呢的身材，也不关注你的身高。你有尼德白马王子儿，你不稀罕爱的感情，你就是拒绝俺得表白，俺也要笑着离开。俺是俺自己，今生只爱泥</p>
+                            </li>
+                            <li>
+                                <h4>
+                                    <span class="player_name">毒狼：</span>
+                                    <span class="date">2013-02-07 20:08:16</span>
+                                </h4>
+                                <p>河北话：爱不在乎呢的身材，也不关注你的身高。你有尼德白马王子儿，你不稀罕爱的感情，你就是拒绝俺得表白，俺也要笑着离开。俺是俺自己，今生只爱泥</p>
+                            </li>
+                            <li>
+                                <h4>
+                                    <span class="player_name">毒狼：</span>
+                                    <span class="date">2013-02-07 20:08:16</span>
+                                </h4>
+                                <p>河北话：爱不在乎呢的身材，也不关注你的身高。你有尼德白马王子儿，你不稀罕爱的感情，你就是拒绝俺得表白，俺也要笑着离开。俺是俺自己，今生只爱泥</p>
+                            </li>
+                            <li>
+                                <h4>
+                                    <span class="player_name">毒狼：</span>
+                                    <span class="date">2013-02-07 20:08:16</span>
+                                </h4>
+                                <p>河北话：爱不在乎呢的身材，也不关注你的身高。你有尼德白马王子儿，你不稀罕爱的感情，你就是拒绝俺得表白，俺也要笑着离开。俺是俺自己，今生只爱泥</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div id="footer">
+    <div class="footer_wrap">
+        <ul class="ad b l">
+            <li><a href="http://games.sina.com.cn/" target="_blank"><img src="images/foot_link/ad1.png" width="96" height="40" alt="新浪游戏" /></a></li>
+            <li><a href="http://www.duowan.com/" target="_blank"><img src="images/foot_link/ad2.png" width="96" height="40" alt="多玩游戏" /></a></li>
+            <li><a href="http://www.yzz.cn/" target="_blank"><img src="images/foot_link/ad3.png" width="96" height="40" alt="叶子猪" /></a></li>
+            <li><a href="http://newgame.17173.com/_kr/" target="_blank"><img src="images/foot_link/ad4.png" width="96" height="40" alt="17173" /></a></li>
+            <li><a href="http://www.aipai.com/" target="_blank"><img src="images/foot_link/ad5.png" width="96" height="40" alt="爱拍游戏" /></a></li>
+            <li><a href="http://games.qq.com/" target="_blank"><img src="images/foot_link/ad6.png" width="96" height="40" alt="腾讯游戏" /></a></li>
+            <li><a href="http://www.uuu9.com/" target="_blank"><img src="images/foot_link/ad7.png" width="96" height="40" alt="游久网" /></a></li>
+            <li><a href="http://www.178.com/" target="_blank"><img src="images/foot_link/ad8.png" width="96" height="40" alt="178" /></a></li>
+            <li><a href="http://xin.52pk.com/game/index_18278.shtml" target="_blank"><img src="images/foot_link/ad9.png" width="96" height="40" alt="52pk" /></a></li>
+            <li><a href="http://gf.tgbus.com/game/13618.shtml" target="_blank"><img src="images/foot_link/ad10.png" width="96" height="40" alt="766" /></a></li>
+        </ul>
+        <div class="l f_l">
+            <img src="images/foot_link/ejoy_logo.png" width="152" height="30" alt="ejoy" />
+            <p>
+                <a target="_blank" href="http://www.ejoy.com/">公司简介</a><span>-</span><a target="_blank" href="http://www.ejoy.com/">游戏产品</a><span>-</span><a target="_blank" href="http://www.ejoy.com/employment.html">人才招聘</a><span>- 粤ICP备12034115号</span></p>
+            <p class="e"><a>简悦科技 版权所有</a></p>
+            <p class="e">Copyright &copy; 2011 - 2012 Ejoy. All Rights Reserved. </p>
+        </div>
+    </div>
+</div>
