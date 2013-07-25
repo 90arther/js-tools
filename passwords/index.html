@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>demo</title>
+    <script type="text/javascript" src="js/jQuery1.7.js"></script>
+    <style>
+        .ill-input {position: relative;}
+        .ill-input label{color:#aaa;left:0.7em;position:absolute;top: 2px;z-index: 2;}
+        .ill-input input {position: relative;z-index: 1;}
+        .focused label{visibility:hidden;}
+    </style>
+</head>
+<body>
+<div class="ill-input" id="wrap">
+    <label for="user_username">Username</label>
+    <input id="user_username" name="user[username]" size="30" type="text" class="is-valid" />
+</div>
+<div class="ill-input">
+    <label for="user_password">Password</label>
+    <input id="user_password" name="user[password]" size="30" type="password" class="is-error"/>
+</div>
+<script type="text/javascript">
+    var wrap = document.getElementById('wrap');
+    var label = document.getElementById('wrap').getElementsByTagName('label');
+    var input = document.getElementById('wrap').getElementsByTagName('input');
+    input.onfocus= function(){
+        wrap.className = "ill-input focused";
+    }
+
+    /*
+    $("input").focus(function(){
+        $("input").closest('.ill-input').addClass('populated');
+    });          */
+</script>
+</body>
+</html>
