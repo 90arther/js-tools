@@ -6,8 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-
-/*矩形描边与矩形填充
+/*
+//矩形描边与矩形填充
 var canvas = document.getElementById('canvas');
  context = canvas.getContext('2d');
  context.font = '38px Arial';
@@ -27,8 +27,8 @@ var canvas = document.getElementById('canvas');
  context.canvas.onmousedown = function(e){
  context.clearRect(0,0,canvas.width,canvas.height);
  };
- */
-/*线性渐变
+
+//线性渐变
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var gradient = context.createLinearGradient(0,0,0,canvas.height);
@@ -36,8 +36,8 @@ gradient.addColorStop(0,"blue");
 gradient.addColorStop(1,"yellow");
 context.fillStyle = gradient;
 context.fillRect(0,0,canvas.width,canvas.height);
-context.fill();*/
-/*反射渐变
+context.fill();
+//反射渐变
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var gradient = context.createRadialGradient(canvas.width/2,canvas.height,1,canvas.width/2,0,100);
@@ -50,7 +50,7 @@ var gradient = context.createRadialGradient(canvas.width/2,canvas.height,1,canva
 
 context.fillStyle = gradient;
 context.rect(0,0,canvas.width,canvas.height);
-context.fill();*/
+context.fill();
 var canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
     repeatRadio = document.getElementById('repeatRadio'),
@@ -84,3 +84,72 @@ norepeatRadio.onclick = function(e){
 window.onload= function(e){
     fillCanvasWithPattern('repeat');
 };
+
+//阴影效果
+var SHADOW_COLOR = 'rgba(0,0,0,0.7)';
+function setIconShadow(){
+    iconContext.shadowColor = SHADOW_COLOR;
+    iconContext.shadowOffsetX = 1;
+    iconContext.shadowOffsetY = 1;
+    iconContext.shadowBlur =2;
+}
+function setSelectedIconShadow(){
+    iconContext.shadowColor = SHADOW_COLOR;
+    iconContext.shadowOffsetX = 4;
+    iconContext.shadowOffsetY = 4;
+    iconContext.shadowBlur = 5;
+}
+var drawingContext = document.getElementById('canvas').getContext('2d'),
+    ERASER_LINE_WIDTH = 1,
+    ERASER_SHADOW_STYLE = 'blue',
+    ERASER_STROKE_STYLE = 'rgba(0,0,255,0.6)',
+    ERASER_SHADOW_OFFSET = -5,
+    ERASER_SHADOW_BLUR = 20,
+    ERASER_RADIUS = 60;
+function setEraserAttributes(){
+    drawingContext.lineWidth = ERASER_LINE_WIDTH;
+    drawingContext.shadowOffsetX = ERASER_SHADOW_STYLE;
+    drawingContext.shadowOffsetY = ERASER_SHADOW_OFFSET;
+    drawingContext.shadowOffsetY = ERASER_SHADOW_OFFSET;
+    drawingContext.shadowBlur = ERASER_SHADOW_BLUR;
+    drawingContext.strokeStyle = ERASER_STROKE_STYLE;
+}
+function drawEraser(loc){
+    drawingContext.save();
+    setEraserAttributes();
+    drawingContext.beginPath();
+    drawingContext.arc(loc.x,loc.y,ERASER_RADIUS,0,Math.PI*2,false);
+    drawingContext.clip();
+    drawingContext.restore();
+}
+
+var context = document.getElementById('canvas').getContext('2d');
+function drawGrid(color,stepx,stepy){
+//////////画一个剪纸效果的环
+}
+function drawTwoArcs(){
+    context.beginPath();
+    context.arc(300,190,150,0,Math.PI*2,false);
+    context.arc(300,190,100,0,Math.PI*2,true);
+
+    context.fill()
+    context.shadowColor = undefined;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+    context.stroke();
+}
+function draw(){
+    context.clearRect(0,0,context.canvas.width,context.canvas.height);
+    drawGrid('lightgray',10,10);
+    context.save();
+    context.shadowColor = 'rgba(0,0,0,0.8)';
+    context.shadowOffsetX  = 12;
+    context.shadowOffsetY = 12;
+    context.shadowBlur = 15;
+    drawTwoArcs();
+    context.restore();
+}
+context.fillStyle = 'rgba(100,140,230,0.5)';
+context.strokeStyle = context.fillStyle;
+draw();
+*/
