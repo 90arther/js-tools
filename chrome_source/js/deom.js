@@ -70,7 +70,7 @@ var handler = function(){
 EventUtil.addHandler(btn,"click",handler);
 EventUtil.removeHandler(btn,"click",handler);
 //DOM中的事件对象
-    */
+
 var btn = document.getElementById("point");
 btn.onclick = function(event){
     alert(event.type);
@@ -80,4 +80,4 @@ btn.addEventListener("click",function(event){
 },false);
 btn.onclick = function(event){
     alert(event.currentTarget == this);
-};
+};*/

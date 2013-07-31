@@ -11,6 +11,7 @@
     function getElementsByClassName(node,classname){
         if(node.getElementsByClassName){
             return node.getElementsByClassName(classname);
+            b = 1;
         }else{
             var results = new Array();
             var elems = node.getElementsByTagName("*");
@@ -19,19 +20,17 @@
                     results[results.length] = elems[i];
                 }
             }
+            b = 2;
             return results;
         }
     }
+    var b;
     var a = document.getElementById('div');
     var p = getElementsByClassName(a,"demo");
     p.onclick = function(){
         alert("ok");
     };
-    var q = getElementsByClassName('demo');
-    for(var i= 0;i<paras.length;i++){
-        alert(paras[i].getAttribute('title'));
-    }
-    alert(q);
+
 </script>
 </body>
 </html>
