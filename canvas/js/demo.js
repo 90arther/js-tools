@@ -152,7 +152,7 @@ function draw(){
 context.fillStyle = 'rgba(100,140,230,0.5)';
 context.strokeStyle = context.fillStyle;
 draw();
-*/
+
 //绘制三角形、矩形、圆形的剪纸
 var context = document.getElementById('canvas').getContext('2d');
 function drawGrid(color,stepx,stepy){
@@ -222,3 +222,27 @@ function addTrianglePath(){
 }
 context.fillStyle = 'goldenrod';
 draw();
+
+//绘制两条线段
+var context = document.getElementById('canvas').getContext('2d');
+context.lineWidth = 1;
+context.beginPath();
+context.moveTo(50,10);
+context.lineTo(450,10);
+context.stroke();
+context.beginPath();
+context.moveTo(50.5,50.5);
+context.lineTo(450.5,50.5);
+context.stroke();
+*/
+
+
+
+
+
+
+
+
+
+
+
