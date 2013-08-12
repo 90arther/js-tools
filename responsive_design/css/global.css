@@ -1,0 +1,12 @@
+body{background: #eee;}
+@font-face {
+    font-family: FZZZHUNHJW;
+    src: url(../fonts/FZZZHUNHJW.TTF);
+}
+@font-face {
+    font-family: FZZDHJW;
+    src: url(../fonts/FZZDHJW.TTF);
+}
+h1{background: #FF801D;;border-radius: 3px;text-align: center;font-family: Calibri;line-height: 2em;color: #fff;box-shadow: 1px 1px 1px #A6A6A6;;;}
+p{font-family: FZZZHUNHJW;}
+pre{background: #262C30;border-radius: 5px;color: #fff;font-family: Georgia,Calibri,Arial;font-weight: bold;}

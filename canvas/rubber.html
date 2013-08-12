@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style type="text/css">
+        body{background: #eee;}
+        #controls{position:absolute;left: 25px;top: 25px;}
+        #canvas{background: #fff;cursor: pointer;margin-left: 10px;margin-top: 10px;box-shadow: 4px 4px 4px rgba(0,0,0,0.5);}
+    </style>
+</head>
+<body>
+    <canvas id='canvas' width="600" height="400">
+        Canvas not supported.
+    </canvas>
+    <div id="controls">
+        Strokes Color:
+        <select id="strokeStyleSelect">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="orange">orange</option>
+            <option value="cornflowerblue" selected>cornflowerblue</option>
+            <option value="goldenred">goldenorod</option>
+            <option value="navy">navy</option>
+            <option value="purple">pruple</option>
+        </select>
+        Guidewires:
+        <input id="guidewireCheckbox" type="checkbox" checked/>
+        <input id="eraseAllButton" type="button" value="Erase all"/>
+    </div>
+    <script src="js/rubber.js"></script>
+</body>
+</html>

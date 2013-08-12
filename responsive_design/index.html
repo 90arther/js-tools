@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet"  href="css/global.css"/>
+    <style type="text/css"></style>
+</head>
+<body>
+<h1>Responsive Web Design</h1>
+<p>屏幕的尺寸小于960px的样式</p>
+<pre>
+    <code>
+        @media screen and (max-width: 960px){
+            body{
+                background-color: red;
+            }
+        }
+    </code>
+</pre>
+<p>屏幕的尺寸大于960px的样式</p>
+<pre>
+    <code>
+        @media screen and (max-width: 960px){
+            body{
+                background-color: red;
+            }
+        }
+    </code>
+</pre>
+<p>当屏幕纵向放置的样式</p>
+<pre>
+    <code>
+       &lt;link rel="stylesheet" media="screen and (orientation:portrait)" href="portrait-screen.css"/&gt;
+    </code>
+</pre>
+<p>非常纵向放置的显示屏设备加载的样式</p>
+<pre>
+    <code>
+        &lt;link rel="stylesheet" media="not screen and (orientation:portrait)" href="portrait-screen.css"/&gt;
+    </code>
+</pre>
+<p></p>
+</body>
+</html>
