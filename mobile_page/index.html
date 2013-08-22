@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet"  href="css/global.css"/>
+    <style type="text/css"></style>
+</head>
+<body>
+<h1>Responsive Web only for mobile</h1>
+<p>今年暑假回家的时候，有一次去考长途，车上7、8个，除了我，全部都是iphone。到处都是iphone。隐隐觉得，明年是移动端的年代了。而且明年，2014年！HTML5将于2014年完成标准规范了。对于我们前端来说，总是满怀期待。</p>
+<p>最近的项目中制作手机端的网页，对我来说，没做过的技术真的很苦逼。只能一点点google，查询官网文档，请教组长。。。总算完成了这个页面了。在这个过程中，我学到很多技术，这里分享一下。</p>
+<h2>工具的准备：</h2>
+<ol>
+    <li>一个调整浏览器尺寸的插件。
+        <p>因为移动设备的尺寸很多，你需要在浏览器安装一个可自定义窗口尺寸的插件。一般开发我们都用chrome与firefox（有人用IE么？当然,IE11确实也是一个好选择）。
+            如果用firefox，可以使用firebug里面的resize。如果用chrome，可以使用chrome自带的overrides.或者使用一个叫resize windows插件，这个插件包含一些常见的手机尺寸，挺好用的。
+            如果使用IE11。可以用自带的“仿真”（在f12开发工具下按ctrl+8）。 </p>
+        <ul>
+            <li><a href="http://getfirebug.com/">firebug</a></li>
+            <li><a href="https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?utm_source=plus">chrome resize window</a></li>
+            <li><a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-11-worldwide-languages">IE11</a></li>
+        </ul>
+        <p>这三个工具都很好用，我本身习惯chrome，所以以下也是用chrome做示例。</p>
+    </li>
+    <li>作用IIS搭建局域网网站让手机直接测试
+        <p>我们如果每次测试都将网站用数据线拉到手机，然后用手机的浏览器打开测试，那有多蛋疼啊。当然如果能服务器提供上传网站是最好的，可是普通开发者的我们还有其它办法，就是在局域网搭建一个网站，
+            手机通过输入IP地址打开网页。怎么实现呢？一起来弄吧。</p>
+        <p>在win7平台，我们选择IIS服务器。分以下步骤进行</p>
+        <ol>
+            <li>搭建IIS。</li>
+            <li>建立网站。</li>
+            <li>绑定IP。</li>
+            <li>手机测试</li>
+        </ol>
+        <p>在win7可以建立多个网站，同时供使用的端口也比较多（在XP系统只能使用8080，未经验证，有XP系统的童鞋可以测试一下）。我是看了这个
+            <a href="http://ons.me/147.html" target="_blank">教程</a>。</p>
+        <p>a、打开控制面板——程序与功能——右侧的“打开与关闭windows功能”——找到“Internet 信息服务”，将里面的子文件全部打勾。点击“确定”。——确定等待安装完成。</p>
+        <P>b、回到控制面板，打开管理工具——Internet 信息服务(IIS)管理器。选中“Default Web Site”，双击中间的“ASP”，把“启用父路径”改为“True”。
+            单击右侧“高级设置”，在物理路径选择你网站的目录。</p>
+        <p>c、回到IIS，单击右侧的“绑定...”，选中你要绑定的网站，点“编辑”。如果是一台电脑，只修改后面的端口号就行，可以随意修改数字。
+            如果是办公室局域网，点击下拉框，选择自己电脑上的局域网IP，例如：192.168.**.**，然后修改端口号。
+            回到IIS，如果右侧显示停止，就选择启动，然后点击下面的浏览网站，就可以打开你绑定文件夹里面的网站了</p>
+        <p>d、手机输入IP地址192.168.**.**:端口号。完成。</p>
+    </li>
+    <li>px转em小工具。
+        <p>因为</p>
+
+    </li>
+</ol>
+
+<p>屏幕的尺寸小于960px的样式</p>
+<pre>
+    <code>
+        @media screen and (max-width: 960px){
+        body{
+        background-color: red;
+        }
+        }
+    </code>
+</pre>
+
+</body>
+</html>
