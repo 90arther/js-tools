@@ -7,6 +7,7 @@
     src: url(../fonts/FZZDHJW.TTF);
 }
 body{background: #eee;width: 90%;margin: 1em auto;font-family: FZZZHUNHJW;}
-h1{background: #FF801D;;border-radius: 3px;text-align: center;font-family: Calibri;line-height: 2em;color: #fff;box-shadow: 1px 1px 1px #A6A6A6;;;}
+h1{background: #FF801D;width:100%;border-radius: 3px;text-align: center;font-family: Calibri;line-height: 2em;color: #fff;box-shadow: 1px 1px 1px #A6A6A6;}
+h2{color:#ff801d;}
 p{text-indent: 2em;}
-pre{background: #262C30;border-radius: 5px;color: #fff;font-family: Georgia,Calibri,Arial;font-weight: bold;}
+pre{background: #262C30;border-radius: 5px;color: #fff;font-family: Georgia,Calibri,Arial;font-weight: bold;overflow: scroll;}

@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="button">
+    <a href="javascript:change('0')" title="习题一">习题一</a>
+    <a href="javascript:change('1')" title="习题二">习题二</a>
+</div>
+<div id="flash">
+
+</div>
+<script type="text/javascript">
+    /*声明一个仓库将所有flash的信息存储起来，按顺序排好，第一个是varehouse[0],第二个是varehouse[1]。*/
+    var warehouse=[
+        {
+            "name":"flash1",
+            "src":"1.swf",
+            "width":"1024",
+            "height":"768"
+        },
+
+        {
+            "name":"flash2",
+            "src":"2.swf",
+            "width":"1024",
+            "height":"768"
+        }
+    ];
+    /*获取flash对象，即放置flash的div*/
+    var flash = document.getElementById('flash');
+    /*改变flash的函数*/
+    function change(n){
+        flash.innerHTML = renderMusicBoxHtmlCode(n);
+    }
+    /*返回flash的内容,根据n确定是哪个flash，将这个flash赋给变量m储存起来。*/
+    function renderMusicBoxHtmlCode(n) {
+        var m = warehouse[n];
+        return ''.concat(
+                '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"',
+                ' codebase="http://active.macromedia.com/flash5/cabs/swflash.cab#version=5,0,0,0"',
+                ' id="mymusicbox" width="',m.width,'" height="',m.height,'">',
+                '<param name="movie" value="',m.src,'">',
+                '<param name="play" value="false">',
+                '<embed name="mymusicbox" src="',m.src,
+                '" width="',m.width,'" height="',m.height,
+                '" play="false">',
+                '</object>');
+    }
+</script>
+</body>
+</html>

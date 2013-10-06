@@ -253,7 +253,7 @@ function drawGrid(context,color,stepx,stepy){
     }
 }
 drawGrid(context,'lightgray',10,10);
-
+*/
 //绘制坐标轴
 var canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
@@ -328,7 +328,7 @@ function drawHorizontalAxisTicks(){
 }
 drawGrid('lightgray',10,10);
 drawAxes();
- */
+ 
 
 
 

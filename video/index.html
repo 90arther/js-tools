@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssreset/reset-min.css">
+    <style type="text/css">
+    .videoLay{border:3px solid #3b6cff;}
+    .dialog_title{position: absolute;top:-3px;right: -28px;background: #3b6cff;}
+    .exit{display: block;font-size: 18px;width: 28px;line-height: 28px;text-align: center;font-weight: bold;text-decoration: none;color:#fff;}
+    .local_btn{display: block;width: 28px;text-align: center;text-decoration: none;border-top:5px solid #ccc;color:#fff;padding: 5px 0;}
+    </style>
+</head>
+<body>
+<!-- 视频链接按扭 ,例如3代表视频的路径，则输入3-->
+<a href="javascript:void(0);" onclick="DivShow('3');" title="01">播放swf视频</a>
+
+<!--视频弹出-->
+<div class="videoLay" id="videoLay">
+    <div class="dialog_title">
+        <a onclick="DivHide()" href="javascript:void(0)" class="exit">&times;</a>
+        <a href="" target="_blank" class="local_btn" id="local_btn">用本地播放器观看</a>
+    </div>
+    <div id="swfLay" class="swfLay l"></div>
+</div>
+
+<!-- 视频弹出 -->
+<script type="text/javascript" src="js/video.js"></script>
+<script type="text/javascript">
+//配置弹出层，传入id
+function TGDialogS(e){showDialog.show({id:e,bgcolor:"#000000",opacity:100});}
+//弹出层
+function DivHide(){
+    var flv_s = document.getElementById("swfLay");
+    if (flv_s){flv_s.innerHTML= "";}
+    showDialog.hide('layer');
+}
+
+function DivShow(videoID){
+    if (!videoID) return;
+    var htmls=/*"<video width=\"1024\" height=\"568\" controls=\"\" autoplay=\"\" name=\"media\">"+
+        "<source src=\"3.mp4\" type=\"video/mp4\">"+*/
+        '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"'+
+                ' codebase="http://active.macromedia.com/flash5/cabs/swflash.cab#version=5,0,0,0"'+
+                ' id="mymusicbox" width="565" height="400">'+
+                '<param name="movie" value="'+videoID+'.swf">'+
+                '<param name="play" value="false">'+
+                '<param name="wmode" value="transparent" />'+
+                '<embed name="mymusicbox" wmode="Opaque" src="'+videoID+'.swf"'+' width="565" height="400"'+
+                'play="true">'+
+                '</object>'
+        /*"</video>"*/;
+    var flv_s = document.getElementById("swfLay");
+    if (flv_s){flv_s.innerHTML=htmls}
+    showDialog.show({
+        id:"videoLay",
+        bgcolor:"#000",
+        opacity:60
+    });
+    document.getElementById("local_btn").href=videoID+".mp4";
+}
+</script>
+
+</body>
+</html>
