@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssreset/reset-min.css"/>
+	<title></title>
+</head>
+<body>
+<div id="a_wrap">
+	<a href="#">button</a>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var EventUtil = {
+        addHandler : function(element,type,handler){
+            if(element.addEventListener){
+                element.addEventListener(type,handler,false);
+            }else 
+            if(element.attachEvent){
+                element.attachEvent("on"+type,handler);
+            }else{
+                element["on"+type] = handler;
+            }
+        },
+        removeHandler : function(element,type,handler){
+            if(element.removeEventListener){
+                element.removeEventListener(type,handler,false);
+            }else if(element.detachEvent){
+                element.detachEvent("on"+type,handler);
+            }else{
+                element["on"+type] = null;
+            }
+        }
+    }
+var a = document.getElementsByTagName("a");
+var a_wrap = document.getElementById('a_wrap');
+var handler = function(){
+    a_wrap.innerHTML+='<a href="#">button</a>';
+    a = document.getElementsByTagName('a');
+    for(var i = 0;i<= a.length;i++){
+        EventUtil.addHandler(a[i],"click",handler);
+    }
+};
+//EventUtil.removeHandler(btn,"click",handler);
+for(var i = 0;i<= a.length;i++){
+    EventUtil.addHandler(a[i],"click",handler);
+}
+//]]>	
+</script>	
+</body>
+</html>

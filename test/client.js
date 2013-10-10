@@ -49,7 +49,7 @@ var client = function(){
     };    
 
     //detect rendering engines/browsers
-    var ua = navigator.userAgent;    
+    var ua = navigator.userAgent;
     if (window.opera){
         engine.ver = browser.ver = window.opera.version();
         engine.opera = browser.opera = parseFloat(engine.ver);
