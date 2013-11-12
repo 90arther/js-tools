@@ -33,6 +33,21 @@ var $$ = {
         		return results;
         	}
         },
+        ////////////////////////
+        picScroll : function(box,next,prev,speed){
+            var width = box.style.width;
+            function move(){
+            }
+            next.onclick = function(){
+                var con = box.getElementsByTagName('div');
+                alert(con);
+                var num =3;
+                var xpos = parseInt(con.style.left);
+                var x = xpos + (-width);
+                con.style.left = x +"px";
+
+            };
+        },
         /////////////////////////
         tab : function(tabNav,tabCon,type) {
             var linklist = document.getElementById(tabNav);

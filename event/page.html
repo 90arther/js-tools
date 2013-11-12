@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssreset/reset-min.css"/>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>-->
 <script type="text/javascript" src="js/myjq.js"></script>
 <title></title>
 <style type="text/css">
 .up{background:red;}
 #tabCon div{display: none;}
 #tabCon div.current{display: block;}
+#picBox{width: 100px;height:100px;overflow: hidden;position: relative;}
+#picBox div{display: block;position: absolute;left: -50px;top: 0;width: 500px}
+#picBox p{width: 100px;height:100px;background: blue;float: left;border:2px solid white;}
+
 </style>
 </head>
 <body>
@@ -30,6 +34,11 @@
 		<div>556</div>
 	</div>
 </div>
+<div id="picBox">
+	<div style="left:0;"><p></p><p></p><p></p><p></p></div>
+</div>
+<p id="next">next</p>
+<p id="prev">prev</p>
 <script type="text/javascript">
 
 var p = document.getElementById('btn');
@@ -39,7 +48,10 @@ function handler(){
 }
 $$.addHandler(test[0],'click',handler);
 $$.tab("tabNav","tabCon","click");
-
+var picBox = document.getElementById("picBox");
+var next = document.getElementById("next");
+var prev = document.getElementById("prev");
+$$.picScroll(picBox,next,prev,2000);
 </script>
 </body>
 </html>
