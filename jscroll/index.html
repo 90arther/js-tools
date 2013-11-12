@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="jquery,滚动条插件,jscroll，改变滚动条" />
+<meta name="description" content="jquery滚动条插件jscroll,可以很方便的自定义网页滚动条，兼容所有主流浏览器，包括firefox，chrome" />
+<title>jquery滚动条插件jscroll</title>
+<style>
+body{padding:10px 0 0px 0;margin:0; font-size:12px; color:#666666; line-height:20px;}
+p.text{padding:10px; margin:10px; background:#f5f5f5; border:1px solid #ccc;}
+.fontRed{ color:#FF0000}
+.title{font-family:Verdana, Arial; font-weight:bold; font-size:14px; padding:0 20px}
+.demo{ width:500px; margin:30px; font-size:12px; padding:1px; border:1px solid #ccc;}
+.demo2{ border:1px solid #ccc; padding:1px; background:#fff; width:700px; margin:20px;}
+.logo h1,.footer h1{ height:1px; overflow:hidden; padding:0; margin:0; line-height:20px; font-size:12px; display:block}
+.footer { border-top:1px dotted #ccc; font-family:Verdana, Arial, Helvetica, sans-serif;  background:#efefef}
+.footer .copyRight{padding:20px; font-size:11px;}
+.footer .copyRight p a{ text-decoration:none;}
+pre.text{padding:10px; margin:10px; background:#f5f5f5; border:1px solid #ccc;}
+.img{ border:1px solid #efefef; padding:1px; background:#fff; width:99px; margin:0 0 0 20px}
+#tt,#cc,#ee{background:#f5f5f5; height:100px;}
+
+.download{font-size:18px; font-family:Verdana, Arial, Helvetica, sans-serif; padding:20px}
+</style>
+<script language='javascript' src='jquery.js'></script>
+<script language='javascript' src='jscroll.js'></script>
+<script type="text/javascript">
+/*--------------------------------------------------------------------------------------------------*/
+$(document).ready(function(){
+	$("#tt").jscroll();
+	$("#cc").jscroll({W:"12px"});
+	$("#ee").jscroll({W:"12px",Btn:{btn:false}});
+	
+/*---------------------------------------------------------以下为自定义滚动条样式，设置时注意逗号--------------*/
+	$(".dd").jscroll({ W:"15px"//设置滚动条宽度
+					,BgUrl:"url(tpImg/s_bg.gif)"//设置滚动条背景图片地址
+					,Bg:"right 0 repeat-y"//设置滚动条背景图片position,颜色等
+					,Bar:{Pos:"bottom"//设置滚动条初始化位置在底部
+						 ,Bd:{Out:"#bcbcbc",Hover:"#ccc"}//设置滚动滚轴边框颜色：鼠标离开(默认)，经过
+						 ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}//设置滚动条滚轴背景：鼠标离开(默认)，经过，点击
+					,Btn:{btn:true//是否显示上下按钮 false为不显示
+						 ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}//设置上按钮背景：鼠标离开(默认)，经过，点击
+						 ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}//设置下按钮背景：鼠标离开(默认)，经过，点击
+					,Fn:function(){}//滚动时候触发的方法
+					});
+
+	$(".ff").jscroll({ W:"15px"
+					,BgUrl:"url(tpImg/s_bg2.gif)"
+					,Bg:"right 0 repeat-y"
+					,Bar:{Bd:{Out:"#a3c3d5",Hover:"#b7d5e6"}
+						 ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+					,Btn:{btn:true
+						 ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+						 ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+					,Fn:function(){}
+					});
+
+	$(".gg").jscroll({ W:"15px"
+					,BgUrl:"url(tpImg/s_bg3.gif)"
+					,Bg:"right 0 repeat-y"
+					,Bar:{Bd:{Out:"#bcbcbc",Hover:"#ccc"}
+						 ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+					,Btn:{btn:true
+						 ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+						 ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+					,Fn:function(){}
+					});
+
+	$(".hh").jscroll({ W:"15px"
+					,BgUrl:"url(tpImg/s_bg4.gif)"
+					,Bg:"right 0 repeat-y"
+					,Bar:{Bd:{Out:"#bcbcbc",Hover:"#ccc"}
+						 ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+					,Btn:{btn:true
+						 ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+						 ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+					,Fn:function(){}
+					});
+
+	$(".ii").jscroll({ W:"15px"
+					,BgUrl:"url(tpImg/s_bg5.gif)"
+					,Bg:"right 0 repeat-y"
+					,Bar:{Bd:{Out:"#064697",Hover:"#064697"}
+						 ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+					,Btn:{btn:true
+						 ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+						 ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+					,Fn:function(){}
+					});
+
+});
+</script>
+</head>
+<body>
+<div  class="logo">
+	<h1><a href="http://www.173it.cn/" >漂亮的滚动条,自定义滚动条,自定义滚动条样式,兼容firefox,谷歌</a></h1>
+	
+</div>
+<p class="text"><b>可以自由的给滚动条定义背景，上下按钮，当然不仅仅是颜色，连图片当背景也可以。</b><span class="fontRed">支持鼠标滚轮，点击滚动条滚轴定位，上下按钮久按加速，兼容firefox,谷歌</span></p>
+
+<p class="text">$(&quot;#tt&quot;).jscroll();//默认调用 </p>
+<p class="title">demo:</p>
+<div class="demo">
+	<div id="tt">
+		<div style="padding:5px;">
+			<b>顶部</b>
+			<p>我的id为dd</p>
+			<p>www.xlabi.com</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<b>底部</b>
+		</div>
+	</div>
+</div>
+<p class="text">$(&quot;#cc&quot;).jscroll({W:&quot;12px&quot;});//设置了滚动条宽度</p>
+<p class="title">demo:</p>
+<div class="demo">
+	<div id="cc" >
+		<div style="padding:5px;">
+			<b>顶部</b>
+			<p>我的id为cc</p>
+			<p>www.xlabi.com</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<b>底部</b>
+		</div>
+	</div>
+</div>
+<p class="text">$(&quot;#ee&quot;).jscroll({W:&quot;12px&quot;,Btn:{btn:false}});//设置了滚动条宽度,去掉了上下按钮,比有按钮好看多了，当然按钮是为了设置背景用的hoho</p>
+<p class="title">demo:</p>
+<div class="demo">
+	<div id="ee">
+		<div style="padding:5px;">
+			<b>顶部</b>
+			<p>我的id为ee</p>
+			<p>www.xlabi.com</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<b>底部</b>
+		</div>
+	</div>
+</div>
+<p style="text-align:center">/*-----------------以下为自定义滚动条样式，设置时注意逗号--------------*/</p>
+<pre class="text">
+  $(".dd").jscroll({ W:"12px"//设置滚动条宽度
+	,BgUrl:""//设置滚动条背景图片地址
+	,Bg:"#ccc"//设置滚动条背景图片position,颜色等
+	,Bar:{  Pos:"bottom"//设置滚动条初始化位置在底部
+			,Bd:{Out:"#000",Hover:"red"}//设置滚动滚轴边框颜色：鼠标离开(默认)，经过
+			,Bg:{Out:"green",Hover:"#fff",Focus:"orange"}}//设置滚动条滚轴背景：鼠标离开(默认)，经过，点击
+	,Btn:{  btn:true//是否显示上下按钮 false为不显示
+			,uBg:{Out:"black",Hover:"#fff",Focus:"orange"}//设置上按钮背景：鼠标离开(默认)，经过，点击
+			,dBg:{Out:"black",Hover:"#fff",Focus:"orange"}}//设置下按钮背景：鼠标离开(默认)，经过，点击
+	,Fn:function(){}//滚动时候触发的方法
+	});
+</pre>
+
+<p class="title">demo:(滚轴初始化位置：底部)</p>
+<div class="img"><img src="tpImg/s_bg.gif" border="0" alt="所用图片" /></div>
+
+<div class="demo2" ><!--加条线 好看点 哈哈-->
+	<div class="dd" style="height:200px;"><!--padding会被取消-->
+		<div style="padding:5px"><!--padding这里设置-->
+			<b>顶部</b>
+			<p>我的class为dd</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>测试内容</p>
+			<p>我的class为dd</p>
+			<p>www.xlabi.com</p>
+			<b>底部</b>
+		</div>
+	</div>
+</div>
+<div class="img"><img src="tpImg/s_bg2.gif" border="0" alt="所用图片" /></div>
+
+<div class="demo2" ><!--加条线 好看点 哈哈-->
+	<div class="ff" style="height:200px;"><!--padding会被取消-->
+		<div style="padding:5px"><!--padding这里设置-->
+<pre style="padding:0; margin:0; color:#4174a3">&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+ $(".ff").jscroll({
+   W:"15px"
+  ,BgUrl:"url(tpImg/s_bg2.gif)"
+  ,Bg:"right 0 repeat-y"
+  ,Bar:{Pos:"bottom"
+        ,Bd:{Out:"#a3c3d5",Hover:"#b7d5e6"}
+        ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+        ,Btn:{btn:true
+              ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+              ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+  ,Fn:function(){}
+ });
+});
+&lt;/script&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="img"><img src="tpImg/s_bg3.gif" border="0" alt="所用图片" /></div>
+<div class="demo2"  style="  background:#fff;">
+	<div class="gg" style="height:200px;"><!--padding会被取消-->
+		<div style="padding:5px"><!--padding这里设置-->
+<pre style="padding:0; margin:0; color:#b5b5b5; font-family:Verdana, Arial, Helvetica, sans-serif">&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+ $(".ff").jscroll({
+   W:"15px"
+  ,BgUrl:"url(tpImg/s_bg3.gif)"
+  ,Bg:"right 0 repeat-y"
+  ,Bar:{Pos:"bottom"
+        ,Bd:{Out:"#a3c3d5",Hover:"#b7d5e6"}
+        ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+        ,Btn:{btn:true
+              ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+              ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+  ,Fn:function(){}
+ });
+});
+&lt;/script&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="img"><img src="tpImg/s_bg4.gif" border="0" alt="所用图片" /></div>
+<div class="demo2"  style="background:#081622;">
+	<div class="hh" style="height:200px;"><!--padding会被取消-->
+		<div style="padding:5px"><!--padding这里设置-->
+<pre style="padding:0; margin:0; color:#b5b5b5; font-family:Verdana, Arial, Helvetica, sans-serif">&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+ $(".hh").jscroll({
+   W:"15px"
+  ,BgUrl:"url(tpImg/s_bg4.gif)"
+  ,Bg:"right 0 repeat-y"
+  ,Bar:{Pos:"bottom"
+        ,Bd:{Out:"#a3c3d5",Hover:"#b7d5e6"}
+        ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+        ,Btn:{btn:true
+              ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+              ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+  ,Fn:function(){}
+ });
+});
+&lt;/script&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="img"><img src="tpImg/s_bg5.gif" border="0" alt="所用图片" /></div>
+<div class="demo2"  style="background:#004fb1;">
+	<div class="ii" style="height:200px;"><!--padding会被取消-->
+		<div style="padding:5px"><!--padding这里设置-->
+<pre style="padding:0; margin:0; color:#b5b5b5; font-family:Verdana, Arial, Helvetica, sans-serif">&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+ $(".ii").jscroll({
+   W:"15px"
+  ,BgUrl:"url(tpImg/s_bg5.gif)"
+  ,Bg:"right 0 repeat-y"
+  ,Bar:{Pos:"bottom"
+        ,Bd:{Out:"#a3c3d5",Hover:"#b7d5e6"}
+        ,Bg:{Out:"-45px 0 repeat-y",Hover:"-58px 0 repeat-y",Focus:"-71px 0 repeat-y"}}
+        ,Btn:{btn:true
+              ,uBg:{Out:"0 0",Hover:"-15px 0",Focus:"-30px 0"}
+              ,dBg:{Out:"0 -15px",Hover:"-15px -15px",Focus:"-30px -15px"}}
+  ,Fn:function(){}
+ });
+});
+&lt;/script&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="download"><a href="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">下载-->jquery.js</a></div>
+<div class="download"><a href="jscroll.js">下载-->jscroll.js(依赖于jquery.js)</a></div>
+			<div class="footer">
+				<div class="copyRight"><h1>滚动条样式制作，滚动条背景定义</div>
+			</div>
+
+</body>
+</html>

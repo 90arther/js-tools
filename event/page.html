@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssreset/reset-min.css"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/myjq.js"></script>
+<title></title>
+<style type="text/css">
+.up{background:red;}
+#tabCon div{display: none;}
+#tabCon div.current{display: block;}
+</style>
+</head>
+<body>
+<p id="btn">click me <span class="test">Ok ,click me !</span></p>
+<div id="tab">
+	<ul id="tabNav">
+		<li class ="up">选择一</li>
+		<li>选择二</li>
+		<li>选择三</li>
+		<li>选择四</li>
+		<li>选择五</li>		
+	</ul>
+	<div id="tabCon">
+		<div class="current">123</div>
+		<div>256</div>
+		<div>356</div>
+		<div>456</div>
+		<div>556</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+var p = document.getElementById('btn');
+var test = $$.getClassNode(p,'test');
+function handler(){
+	alert("ok");
+}
+$$.addHandler(test[0],'click',handler);
+$$.tab("tabNav","tabCon","click");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+body{font-family:"Microsoft YaHei",simSun,"Lucida Grande","Lucida Sans Unicode",Arial;line-height:170%;font-size:12px;background: #f0f0ed;}
+.wrap{width: 76%;margin: 0 auto;}
+h1{background: #FF801D;width: 100%;border-radius: 3px;text-align: center;line-height: 2em;color: #fff;box-shadow: 1px 1px 1px #A6A6A6;}
+label{color: #ff801d;font-size: 1.5em;line-height: 1.6em;}
+code{background: #262C30;display: block;color: #fff;padding: 10px;font-family:"Microsoft YaHei",simSun,"Lucida Grande","Lucida Sans Unicode",Arial;margin: 10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>HTML5 form</h1>
+<p>在HTML5的新表单中，有许多新的输入类型：</p>
+<form>
+<label>email:</label>
+<input type="email" placeholder="90arther@gmail.com" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;email:&lt;/label&gt;
+&lt;input type="email" placeholder="90arther@gmail.com" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义邮件的表单，其中placeholder属性值是默认值，一种提示功能，在各个浏览器的显示效果也不一样，它在chrome是输入栏有值时隐藏，在safari中是输入栏获得焦点时隐藏。required表示必填项，aria-required为可访问性而设置。autofocus表示在表单中默认获得焦点，autocomplete表示是否自动填充。</p>
+<label>Number:</label>
+<input type="number" placeholder="123" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Number:&lt;/label&gt;
+&lt;input type="number" placeholder="123" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为数字</p>
+<label>Url:</label>
+<input type="url" placeholder="90arther.net" required aria-required= "true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Url:&lt;/label&gt;
+&lt;input type="url" placeholder="90arther.net" required aria-required= "true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为URL</p>
+<label>Tel:</label>
+<input type="tel" placeholder="+86-15989044570" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Tel:&lt;/label&gt;
+&lt;input type="tel" placeholder="+86-15989044570" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为电话</p>
+<label>Search:</label>
+<input tyep="search" placeholder="90arther" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Search:&lt;/label&gt;
+&lt;input tyep="search" placeholder="90arther" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为搜索</p>
+<label>Date:</label>
+<input type="date" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Date:&lt;/label&gt;
+&lt;input type="date" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为日期</p>
+<label>Month:</label>
+<input type="month" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Month:&lt;/label&gt;
+&lt;input type="month" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为月份</p>
+<label>Week:</label>
+<input type="week" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Week:&lt;/label&gt;
+&lt;input type="week" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为星期</p>
+<label>Time:</label>
+<input type="time" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Time:&lt;/label&gt;
+&lt;input type="time" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为时间</p>
+<label>Datetime:</label>
+<input type="datetime" required aria-required="true" autofocus autocomplete="off"/>
+<code>
+&lt;label&gt;Datetime:&lt;/label&gt;
+&lt;input type="datetime" required aria-required="true" autofocus autocomplete="off"/&gt;
+</code>
+<p>定义为本地时间</p>
+<label>Range:</label>
+<input type="range" min="1" max="10" value="5"/>
+<code>
+&lt;label&gt;Range:&lt;/label&gt;
+&lt;input type="range" min="1" max="10" value="5"/&gt;
+
+</code>
+<p>定义为滑动条</p>
+<label>Submit:</label>
+<input type="submit"/>
+<code>
+&lt;label&gt;Submit:&lt;/label&gt;
+&lt;input type="submit"/&gt;
+</code>
+</form>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+//]]
+</script>
+</body>
+</html>

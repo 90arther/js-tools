@@ -30,16 +30,81 @@ function checkStorageSupport(){
 	}
 }
 //checkStorageSupport();
-window.sessionStorage.setItem('myFirstKey','90arther');
-alert(window.sessionStorage.getItem('myFirstKey'));
-/*setItem('key','value');
-getItem('key');
-key[index];
-length;
-remove('key');
-clear();
-*/
-</script>	
+//window.sessionStorage.setItem('myFirstKey','90arther');
+//alert(window.sessionStorage.getItem('myFirstKey'));
 
+</script>	
+<script type="text/javascript">
+//<![CDATA[
+//重排序方法reverse()和sort()
+//使用sort()实现升序排序
+/*
+function compare(value1,value2){
+	if(value1 < value2){
+		return -1;
+	}else if(value1 > value2){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+var values = [0,1,5,10,15];
+values.sort(compare);
+alert(values);//0,1,5,10,15
+*/
+//使用sort()实现降序方法
+/*
+function compare(value1,value2){
+	if(value1 < value2){
+		return 1;
+	}else if(value1 > value2){
+		return -1;
+	}else{
+		return 0;
+	}
+}
+var values = [0,1,5,10,15];
+values.sort(compare);
+alert(values);//15,10,5,1,0
+*/
+//]]
+</script>
+<script type="text/javascript">
+//<![CDATA[
+//栈方法
+/*
+var colors = new Array();
+var count = colors.push("red","green");
+alert(count);
+count = colors.push("black");//在最尾添加一项
+alert(count);
+var item = colors.pop();//在最尾删除一项
+alert(item);
+alert(colors.length);*/
+//队列方法1
+/*
+var colors = new Array();
+var count  = colors.push("red","green");
+alert(colors);
+count = colors.push("black");//在最尾添加一项
+alert(colors);
+var item = colors.shift();//取得并删除第一项
+alert(item);
+alert(colors.length);
+alert(colors);*/
+//队列方法2
+/*
+var colors = new Array();
+var count = colors.unshift("red","green");
+alert(colors);
+count = colors.unshift("black");//在前端插入一项
+alert(colors);
+var item = colors.pop();//去掉最后一项
+alert(item);
+alert(colors.length);
+alert(colors);*/
+ 
+//]]
+</script>
 </body>
 </html>
