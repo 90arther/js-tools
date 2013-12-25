@@ -1,0 +1,16 @@
+html,body{background-color:#fff;}
+#wrap h1,#wrap h2,#wrap h3{display:none;}
+#wrap{max-width:1920px;min-width:960px; _width:expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<960||document.body.clientWidth<960)?"960px":"100%")); margin:0 auto; overflow:hidden; font:12px "ËÎÌו";}
+#wrap-bg1{}
+#wrap-bg2{}
+#wrap-bg3{}
+#main{width:960px; margin:0 auto;}
+#header{height:340px; }
+#center{height:890px;}
+
+#Share{padding-top:20px;}			
+#Share,#Share a{color:#ffd83f;}
+#Share a{margin-right:10px;}
+#NIE-copyRight{margin:0 0 20px 0;}
+#NIE-copyRight,#NIE-copyRight a{color:#ffd83f;}
+#NIE-copyRight #ncp-l2{color:#fff;}
