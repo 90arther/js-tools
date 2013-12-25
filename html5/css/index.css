@@ -1,0 +1,15 @@
+/*frame*/
+html{color:#000;background:#fff}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000;}
+/*global*/
+html,body{background-color:#edeae1;}
+#wrap h1,#wrap h2{display:none;}
+#wrap{max-width:1920px;min-width:1000px; _width:expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<1000||document.body.clientWidth<1000)?"1000px":"100%")); margin:0 auto; overflow:hidden;}
+#wrap-bg1{background:url(../images/nbg1.jpg) no-repeat center 0;}
+#wrap-bg2{background:url(../images/bg2.jpg) no-repeat center 750px;}
+#wrap-bg3{background:url(../images/bg3.jpg) no-repeat center bottom;}
+#main{width:1000px; margin:0 auto; min-height:1200px; _height:1200px;}
+
+
+
+#CopyRight{padding:0 0 65px 0;}
+#CopyRight{color:#09546d;}
