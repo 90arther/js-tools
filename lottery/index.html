@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="CP">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="shortcut icon" href="http://imgcache.gtimg.cn/vipstyle/mobile/mvip/v1/img/favicon.ico" type="image/x-icon">
+<title>不贱不散手机端</title>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="wrapper">
+
+    <!--section start-->
+    <section class="page02_sec">
+        <div class="gift">
+            <ul id="puzzle1">
+                <li class="qianlan"><img src="img/gift_1.png" alt="QQ公仔"/></li>
+                <li class="shenlan"><img src="img/gift_2.png" alt="Q币"/></li>
+                <li class="qianlan"><img src="img/gift_3.png" alt="感谢参与"/></li>
+                <li class="shenlan"><img src="img/gift_4.png" alt="彩贝"/></li>
+                <li class="qianlan"><img src="img/gift_5.png" alt="iPhone"/></li>
+                <li class="shenlan"><img src="img/gift_6.png" alt="mp3"/></li>
+                <li class="qianlan"><img src="img/gift_7.png" alt="公仔"/></li>
+                <li class="shenlan"><img src="img/gift_8.png" alt="钥匙扣"/></li>
+                <li class="qianlan"><img src="img/gift_9.png" alt="iPhone套"/></li>
+            </ul>
+        </div>
+        <p class="wabao_num">我还可以挖宝<span class="yellow">X次</span></p>
+        <p class="btn_wrap_yellow"><a href="#" class="btn_yellow" id="btn_lottery">立即挖宝</a></p><!--还有抽奖机会 show-->
+        <p class="btn_wrap_hui" style="display: none;"><a href="index.html" class="btn_white">返回首页</a></p><!--没有抽奖机会，只能返回首页 hide-->
+    </section>
+    <!--section end-->
+    <!-- 弹出层-->
+    <div class="mod_pop_wrap1" style="display:none;" id="pop1">
+        <div class="lz-pop2">
+            <div class="pop-tips2">
+                <img src="img/gift_1.png" alt="贱宝" class="gift_img" id="gift_img" width="8.125em" height="8.125em"/>
+                <p class="renpin" id="renpin">人品爆发，获得 <span class="yellow">XX</span> !</p>
+                <p class="no_renpin" id="no_renpin">人品不行，继续努力！</p>
+                <p class="fasong" id="fasong">奖品将在活动结束后30个工作日内专人联系发送。</p>
+                <p class="shengyu">你今天剩下 <span class="yellow">4</span> 次挖宝机会</p>
+                <a href="index.html" class="return_index">返回首页</a>
+                <a href="javascript:hideDialogS();" class="dialog_btn">继续挖宝</a>
+                <p href="" class="no_chance" style="display: none;">继续挖宝</p> <!--没有机会挖宝的时候按扭 button-->
+                <a href="javascript:hideDialogS();" class="close-btn qianhui">&times;</a>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    //配置弹出层，传入id
+    var popID;
+    /*显示弹出层JS代码*/
+    function TGDialogS(popid) {
+        popID = popid;
+        document.getElementById(popID).style.display = "block"; //显示
+    }
+    /*关闭弹出层JS代码*/
+    function hideDialogS() {
+        document.getElementById(popID).style.display = "none"; //关闭
+    }
+</script>
+<script src="http://imgcache.gtimg.cn/c/=/club/qv/pkg/qv_1.x.x.js"></script>
+<script type="text/javascript">
+    /* 做为修改弹出框内容的函数 star*/
+    var img = document.getElementById('gift_img');    //结果的图片显示
+    function output_end(num){
+        img.src = 'img/gift_'+ num+'.png'; //修改抽中结果的图片，将抽中结果显示在弹出层
+        if(num==3){
+            document.getElementById('renpin').style.display = 'none';
+            document.getElementById('no_renpin').style.display = 'block';
+            document.getElementById('fasong').style.display ='none';
+        }else{
+            document.getElementById('renpin').style.display = 'block';
+            document.getElementById('no_renpin').style.display = 'none';
+            document.getElementById('fasong').style.display ='block';
+        }
+    }
+    /* 做为修改弹出框内容的函数 end*/
+
+    var a=document.getElementsByTagName('a');
+    for(var i=0;i<a.length;i++){
+        a[i].addEventListener('touchstart',function(){},false);
+    }
+
+    (function($){
+        // 构造Puzzle
+        var Puzzle = function(config){
+            this.config = $.extend({}, Puzzle.config, config); // 参数接收
+            $.extend(this, this.config);
+            this.init();
+        };
+
+        // 插件默认配置
+        Puzzle.config = {
+            link: false,
+            onstart: function(){}
+        };
+
+        // 扩展Puzzle方法
+        Puzzle.prototype = {
+            init: function(){
+                var self = this;
+                self.flash(1000);
+                self.btnStart.bind('click', function(e){
+                    self.start();
+                    e.preventDefault();
+                })
+            },
+
+            start: function(){
+                var self = this;
+                self.onstart.call(self);
+                self.flash(150);
+            },
+
+            flash: function(time){
+                if(!time) return;
+                var self = this;
+                window.clearInterval(self.timer);
+                self.timer = window.setInterval(function(){
+                    self._run();
+                }, time);
+            },
+
+            stop: function(i){
+                if(this.timer) window.clearInterval(this.timer);
+                if(this.config.prizes) this.config.prizes.removeClass('current');
+                if(i !== window.undefined) this.config.prizes.eq(i).addClass('current');
+                if(this.onstop) this.onstop.call(this);
+                //运用gift_id表示抽中那个贱宝的ID。
+                var gift_id = i+1;//贱宝的ID等于i加上1.
+                output_end(gift_id); //抽中后调用的函数显示各种结果(弹出层)
+                TGDialogS('pop1');//调用弹出框，输出抽奖结果。
+            },
+
+            _run: function(){
+                var self = this;
+                if(self.config.prizes) {
+                    var pick =Math.floor(Math.random()*self.config.prizes.length);
+                    self.config.prizes.removeClass('current');
+                    self.config.prizes.eq(pick).addClass('current');
+                }
+            }
+
+        };
+        jQuery.Puzzle = Puzzle;
+    })(jQuery);
+
+    // 抽奖 lottery01
+    window.puzzle1 = new $.Puzzle({
+        btnStart: $('#btn_lottery'),
+        prizes: $('#puzzle1 li'),
+        onstart: function(){
+            // 可以在这儿发起中奖请求
+            var self = this;
+
+            // 测试代码
+            window.setTimeout(function(){
+                self.stop(parseInt(Math.random()*9));
+            }, 10000);
+        }
+    });
+</script>
+</div>
+</body>
+</html>
