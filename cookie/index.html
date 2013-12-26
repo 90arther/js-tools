@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>set and get cookie</title>
+</head>
+<body>
+<p>页面包括setCookie、getCookie、checkCookie三个函数。</p>
+<p>必须在服务器下才能运行。</p>
+</body>
+</html>
+<script type="text/javascript">
+function setCookie(c_name,value,expiredays){
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate()+expiresdays);
+	document.cookie = c_name + "=" + escape(value)+((expiredays==null)?"" : ";expires="+ exdate.toGMTString());
+}
+function getCookie(c_name){
+	if(document.cookie.length>0){
+		c_start=document.cookie.indexOf(c_name + "=");
+		if(c_start != -1){
+			c_start = c_start + c_name.length + 1;
+			c_end = document.cookie.indexOf(";",c_start);
+			if(c_end == -1){
+				c_end = document.cookie.length;
+				return unescape(document.cookie.substring(c_start,c_end))
+			}
+		}
+	return "";
+	}
+}
+function checkCookie(){
+	username = getCookie('username');
+	if(username != null && username != ""){
+		alert("welcome"+username);
+	}else{
+		username= prompt('Please enter your name:',"");
+		if(username != null && username != ""){
+			setCookie('username',username,365);
+		}
+	}
+}
+checkCookie();
+</script>
+
