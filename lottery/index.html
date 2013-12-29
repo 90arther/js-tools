@@ -2,35 +2,37 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="author" content="CP">
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link rel="shortcut icon" href="http://imgcache.gtimg.cn/vipstyle/mobile/mvip/v1/img/favicon.ico" type="image/x-icon">
-<title>不贱不散手机端</title>
+<title>抽奖活动页面</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" href="css/common.css">
+<style type"text/css">
+
+</style>
 </head>
 <body>
 <div class="wrapper">
-
+    <header style="background:#fff;color:#000;">页面链接Google Hosted Libraries - Developer's Guide,请自行下载jQuery1.10后者以上版本。</header>
     <!--section start-->
     <section class="page02_sec">
         <div class="gift">
             <ul id="puzzle1">
-                <li class="qianlan"><img src="img/gift_1.png" alt="QQ公仔"/></li>
-                <li class="shenlan"><img src="img/gift_2.png" alt="Q币"/></li>
-                <li class="qianlan"><img src="img/gift_3.png" alt="感谢参与"/></li>
-                <li class="shenlan"><img src="img/gift_4.png" alt="彩贝"/></li>
-                <li class="qianlan"><img src="img/gift_5.png" alt="iPhone"/></li>
-                <li class="shenlan"><img src="img/gift_6.png" alt="mp3"/></li>
-                <li class="qianlan"><img src="img/gift_7.png" alt="公仔"/></li>
-                <li class="shenlan"><img src="img/gift_8.png" alt="钥匙扣"/></li>
-                <li class="qianlan"><img src="img/gift_9.png" alt="iPhone套"/></li>
+                <li class="qianlan"><img src="img/gift_1.png" alt="奖品1"/></li>
+                <li class="shenlan"><img src="img/gift_2.png" alt="奖品2"/></li>
+                <li class="qianlan"><img src="img/gift_3.png" alt="奖品3"/></li>
+                <li class="shenlan"><img src="img/gift_4.png" alt="奖品4"/></li>
+                <li class="qianlan"><img src="img/gift_5.png" alt="奖品5"/></li>
+                <li class="shenlan"><img src="img/gift_6.png" alt="奖品6"/></li>
+                <li class="qianlan"><img src="img/gift_7.png" alt="奖品7"/></li>
+                <li class="shenlan"><img src="img/gift_8.png" alt="奖品8"/></li>
+                <li class="qianlan"><img src="img/gift_9.png" alt="奖品9"/></li>
             </ul>
         </div>
-        <p class="wabao_num">我还可以挖宝<span class="yellow">X次</span></p>
+        <p class="lottery_time">我还可以挖宝<span class="yellow">X次</span></p>
         <p class="btn_wrap_yellow"><a href="#" class="btn_yellow" id="btn_lottery">立即挖宝</a></p><!--还有抽奖机会 show-->
         <p class="btn_wrap_hui" style="display: none;"><a href="index.html" class="btn_white">返回首页</a></p><!--没有抽奖机会，只能返回首页 hide-->
     </section>
@@ -39,7 +41,7 @@
     <div class="mod_pop_wrap1" style="display:none;" id="pop1">
         <div class="lz-pop2">
             <div class="pop-tips2">
-                <img src="img/gift_1.png" alt="贱宝" class="gift_img" id="gift_img" width="8.125em" height="8.125em"/>
+                <img src="img/gift_1.png" alt="奖品内容" class="gift_img" id="gift_img" />
                 <p class="renpin" id="renpin">人品爆发，获得 <span class="yellow">XX</span> !</p>
                 <p class="no_renpin" id="no_renpin">人品不行，继续努力！</p>
                 <p class="fasong" id="fasong">奖品将在活动结束后30个工作日内专人联系发送。</p>
@@ -64,7 +66,6 @@
         document.getElementById(popID).style.display = "none"; //关闭
     }
 </script>
-<script src="http://imgcache.gtimg.cn/c/=/club/qv/pkg/qv_1.x.x.js"></script>
 <script type="text/javascript">
     /* 做为修改弹出框内容的函数 star*/
     var img = document.getElementById('gift_img');    //结果的图片显示
@@ -162,7 +163,7 @@
             // 测试代码
             window.setTimeout(function(){
                 self.stop(parseInt(Math.random()*9));
-            }, 10000);
+            },5000);
         }
     });
 </script>
