@@ -9,90 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <title>抽奖活动页面</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<style type"text/css">
-/* reset */
-body, div, p, ul, li, table, tbody, tr, td, textarea, form, input, h1, h2, h3, h4, h5, dl, dt, dd, img, iframe, header, nav, section, article, footer, figure, figcaption, menu { margin: 0; padding: 0; color: #000000; list-style: none; font-size: 100%; }
-body { font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica; -webkit-user-select: none; -webkit-text-size-adjust: none; line-height: 24px; position: relative; }
-a { text-decoration: none; color: #614736;}
-header, nav, section, article, footer, figure, figcaption { display: block; }
-ol, ul { margin: 0; padding: 0; }
-fieldset { border: none; margin: 0; padding: 0; }
-i, em, u, b { font-style: normal; }
-html { height: 100% }
-/* layout */
-.fl { float: left; }
-.fr { float: right; }
-.clear { clear: both; }
-.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.none { display: none!important; }
-.pos_r { position: relative; }
-.tl { text-align: left; }
-.hide{ display:none;}
-body { font-size: 120%; -webkit-text-size-adjust: none; text-align:center;background-color: #162937;}
-
-/*page style*/
-.wrapper{margin: 0 auto;text-align: center;}
-.btn_wrap_yellow{margin: 3.875em auto 0;width:19.938em;height:5.563em;background: #c2a038;border:3px solid #1a5f89;border-radius:0.50625em;}
-.btn_yellow{font-size:2.250em;display:block;width:8.86133333em;height:2.32244444em;line-height:2.47244444em;margin: auto;border-radius:0.225em;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fef167), color-stop(100%, #ffe161));color:#4578bc;}
-.btn_wrap_hui{margin: 3.875em auto 0;width:19.938em;height:5.563em;background: #aaa;border:3px solid #1a5f89;border-radius:0.50625em;}
-.btn_white{font-size:2.250em;display:block;width:8.86133333em;height:2.32244444em;line-height:2.47244444em;margin: auto;border-radius:0.225em;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #ccc));color:#222;}
-.yellow{color:#ffaf25;font-weight: bold;}
-.qianhui{color:#c4c4c4;}
-.shenhui{color:#656565;}
-.close-btn{position: absolute;font-size:4em;height:0.75em;top:0.25em;right:0.25em;}
-
-/*section部分*/
-/*page02 star*/
-.page02_sec{background: url(../img/wabao_bg.png) no-repeat center top;background-size: 40em auto;padding: 1px 0 0;height: 51.938em;}
-.gift{width: 29.439em;height:29.439em;margin: 3.125em auto 0;}
-.qianlan{background: #d1e6f4;border: 1px solid #d1e6f4;}
-.shenlan{background: #a5c1e8;border: 1px solid #a5c1e8;}
-.gift ul{height: 100%;}
-.gift li{width: 32%;height:32%;float: left;}
-.gift img{width: 100%;height:100%;}
-.gift li.current{background: #fef066;border:1px solid #f3b64d;outline: 1px solid #f3b64d;}
-.wabao_num{height: 4.357714em;font-size: 1.750em;color:#fff;line-height: 3.178857em;}
-/*page02 弹出框 star*/
-.lz-pop2 {
-        position: absolute;
-            text-align:center;top:35%;left:50%;width:37.500em;margin-left:-18.75em;height:25.625em;
-                background-color:#f6f6f6;
-                    -webkit-border-radius:5px;
-                        border-radius:5px;border:solid 1px #FFF;
-                            box-shadow:inset 0 3px 0 #358ff3;
-}
-.gift_img{display: block;margin: 0.8em auto;width:6.125em;height: 6.125em;}
-.pop-tips2 p{color:#4e4e4e;line-height: 1.5em;}
-.renpin{font-size:2.250em;}
-.no_renpin{font-size:2.250em;}
-.fasong{font-size:1.500em;}
-.shengyu{font-size:1.750em;margin-bottom: 1em;}
-.return_index{
-        color:#4e4e4e;
-            display:inline-block;
-                width:7.5em;height:2.361111em;line-height:2.361111em;text-align:center;font-size:2.250em;
-                    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#d4d4d4));
-                        -webkit-border-radius:3px;
-                            border-radius:3px;
-                                border:solid 1px #d4d4d4;
-                                    box-shadow: inset 0 2px 0 0 #fff;
-                                        text-shadow:0 2px 0 #fff;
-                                            text-decoration:none;
-}
-p.no_chance{
-        color:#c4c4c4;
-            display:inline-block;
-                width:7.5em;height:2.361111em !important;line-height:2.361111em;text-align:center;font-size:2.250em;
-                    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#d4d4d4));
-                        -webkit-border-radius:3px;
-                            border-radius:3px;
-                                border:solid 1px #d4d4d4;
-                                    box-shadow: inset 0 2px 0 0 #fff;
-                                        text-shadow:0 2px 0 #fff;
-                                            text-decoration:none;
-}
-
-</style>
+<link rel="stylesheet" href="css/common.css"/>
 </head>
 <body>
 <div class="wrapper">
@@ -101,27 +18,27 @@ p.no_chance{
     <section class="page02_sec">
         <div class="gift">
             <ul id="puzzle1">
-                <li class="qianlan"><img src="img/gift_1.png" alt="奖品1"/></li>
-                <li class="shenlan"><img src="img/gift_2.png" alt="奖品2"/></li>
-                <li class="qianlan"><img src="img/gift_3.png" alt="奖品3"/></li>
-                <li class="shenlan"><img src="img/gift_4.png" alt="奖品4"/></li>
-                <li class="qianlan"><img src="img/gift_5.png" alt="奖品5"/></li>
-                <li class="shenlan"><img src="img/gift_6.png" alt="奖品6"/></li>
-                <li class="qianlan"><img src="img/gift_7.png" alt="奖品7"/></li>
-                <li class="shenlan"><img src="img/gift_8.png" alt="奖品8"/></li>
-                <li class="qianlan"><img src="img/gift_9.png" alt="奖品9"/></li>
+                <li class="qianlan"><img src="" alt="奖品1"/></li>
+                <li class="shenlan"><img src="" alt="奖品2"/></li>
+                <li class="qianlan"><img src="" alt="奖品3"/></li>
+                <li class="shenlan"><img src="" alt="奖品4"/></li>
+                <li class="qianlan"><img src="" alt="奖品5"/></li>
+                <li class="shenlan"><img src="" alt="奖品6"/></li>
+                <li class="qianlan"><img src="" alt="奖品7"/></li>
+                <li class="shenlan"><img src="" alt="奖品8"/></li>
+                <li class="qianlan"><img src="" alt="奖品9"/></li>
             </ul>
         </div>
-        <p class="lottery_time">我还可以挖宝<span class="yellow">X次</span></p>
+        <p class="lottery_time">我还可以挖宝<span class="yellow">X次<!-- #echo lottery_time --></span></p>
         <p class="btn_wrap_yellow"><a href="#" class="btn_yellow" id="btn_lottery">立即挖宝</a></p><!--还有抽奖机会 show-->
-        <p class="btn_wrap_hui" style="display: none;"><a href="index.html" class="btn_white">返回首页</a></p><!--没有抽奖机会，只能返回首页 hide-->
+        <p class="btn_wrap_hui"><a href="index.html" class="btn_white">返回首页</a></p><!--没有抽奖机会，只能返回首页 hide-->
     </section>
     <!--section end-->
     <!-- 弹出层-->
     <div class="mod_pop_wrap1" style="display:none;" id="pop1">
         <div class="lz-pop2">
             <div class="pop-tips2">
-                <img src="img/gift_1.png" alt="奖品内容" class="gift_img" id="gift_img" />
+                <img src="" alt="奖品内容" class="gift_img" id="gift_img" />
                 <p class="renpin" id="renpin">人品爆发，获得 <span class="yellow">XX</span> !</p>
                 <p class="no_renpin" id="no_renpin">人品不行，继续努力！</p>
                 <p class="fasong" id="fasong">奖品将在活动结束后30个工作日内专人联系发送。</p>
@@ -133,6 +50,8 @@ p.no_chance{
             </div>
         </div>
     </div>
+    <p>剩余次数：<span id="lottery-time"></span></p>
+    <p>本次抽中的奖品:<span id="lottery-id"></span></p>
 <script type="text/javascript">
     //配置弹出层，传入id
     var popID;
@@ -150,7 +69,7 @@ p.no_chance{
     /* 做为修改弹出框内容的函数 star*/
     var img = document.getElementById('gift_img');    //结果的图片显示
     function output_end(num){
-        img.src = 'img/gift_'+ num+'.png'; //修改抽中结果的图片，将抽中结果显示在弹出层
+        //img.src = 'img/gift_'+ num+'.png'; //修改抽中结果的图片，将抽中结果显示在弹出层
         if(num==3){
             document.getElementById('renpin').style.display = 'none';
             document.getElementById('no_renpin').style.display = 'block';
@@ -163,10 +82,10 @@ p.no_chance{
     }
     /* 做为修改弹出框内容的函数 end*/
 
-    var a=document.getElementsByTagName('a');
-    for(var i=0;i<a.length;i++){
-        a[i].addEventListener('touchstart',function(){},false);
-    }
+    //var a=document.getElementsByTagName('a');
+    //for(var i=0;i<a.length;i++){
+      //  a[i].addEventListener('touchstart',function(){},false);
+    //}
 
     (function($){
         // 构造Puzzle
