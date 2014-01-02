@@ -1,75 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!DOCTYPE html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <meta charset="utf-8"/>
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <meta http-equiv="X-UA-Compatible" content="IE=7" />
-  <title></title>
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
+  <title><!--#echo var='Title' --></title>
+  <meta name="keywords" content="<!--#echo var='Keywords'-->" />
+  <meta name="description" content="<!--#echo var='Description'-->" />
   <meta name="robots" content="all" />
-  <meta name="author" content="Õ¯“◊£¨NetEase Inc." />
-  <meta name="copyright" content="Õ¯“◊£¨NetEase Inc." />
-  <meta name="front-end technicist" content="" />
-  
-  <link type="text/css" rel="stylesheet" href="css/bass.css" media="all" />
-  <link type="text/css" rel="stylesheet" href="css/index.css" media="all" />
-  <link rel="dns-prefetch" href="http://res.nie.netease.com">
+  <meta name="author" content="" />
+  <meta name="copyright" content=" " />
+  <meta name="designer" content=" " />
+  <meta name="front-end technicist" content=" " />
 
-  <!--[if IE 6]><script>try{document.execCommand("BackgroundImageCache", false, true);}catch(e){}</script><![endif]-->  
-  <!-- jquery mix NIE (◊Ó–¬∞Ê±æ£©-->
-  <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>    
-  <script charset="gb2312" src="js/com.js"></script> 
-</head>
+  <link type="text/css" rel="stylesheet" href="css/index.css" media="all" />
+  <link rel="dns-prefetch" href=" ">
+
+  <!--[if lte IE 8]>
+  <script charset="utf-8" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
 <body>
-<!--∂•≤øµº∫Ω-->
-<div id="NIE-topBar"></div>
-<!-- “≥√ÊÕ‚Ã◊ Start -->
+<div id="TopBar"></div>
+
 <div id="wrap">
-  <div id="wrap-bg1">
-    <div id="wrap-bg2">
-      <div id="wrap-bg3">      
-      	<!-- ÷˜ÃÂ Start -->
-        <div id="main">
-        
-          <!-- “≥√º Start -->
-          <div id="header">
-          	  <h1></h1>
-              <h2></h2>
-              <a class="Logo" href="http://xy3.163.com/" target="_blank"></a>
-              <div class="Nav">
-              	  <ul>
-                  	<li><a class="Link1" target="_blank" href="">Ω¯»ÎπŸÕ¯</a></li>
-					<li><a class="Link2" target="_blank" href="">’ ∫≈◊¢≤·</a></li>
-					<li><a class="Link3" target="_blank" href="">”Œœ∑œ¬‘ÿ</a></li>
-                  </ul>
-              </div>
-          </div>
-          <!-- “≥√º End -->
-          
-          <!-- ÷––ƒ Start -->
-          <div id="center">
-          </div>
-          <!-- ÷––ƒ End -->
-          
-          <!-- “≥Ω≈ Start -->
-          <div id="footer">
-          
-          	<!-- NIE µ◊≤ø∞Ê»® Start -->
-            <div id="NIE-copyRight">
-            </div>
-            <!-- NIE µ◊≤ø∞Ê»® End -->
-            
-          </div>
-          <!-- “≥Ω≈ End -->
-          
-        </div>        
-        <!-- ÷˜ÃÂ End -->
-        
-      </div>
+<div id="wrap-bg1">
+<div id="wrap-bg2">
+<div id="wrap-bg3">
+<div id="main">
+    <h1>È°µÈù¢ÂºπÁ™óDialog</h1>
+    <h2>È°µÈù¢ÂåÖÂê´‰∏§‰∏™ÂáΩÊï∞openDialog‰∏écloseDialogÔºåÂÖ∂‰∏≠ÊâìÂºÄÈúÄË¶Å‰º†ÈÄíÂºπÁ™óÁöÑIDÂπ∂Â≠òÂÇ®IDÔºåÂÖ≥Èó≠Êó†ÈúÄ‰º†ÂÖ•ID„ÄÇ</h2> 
+    <p><a href="javascript:openDialog('dialog1')">OpenOpenOpenOpen1</a></p>
+    <div id="dialog1" style="display:none;">
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <a href="javascript:closeDialog()">&times;</a>
     </div>
-  </div>
+    <p><a href="javascript:openDialog('dialog2')">OpenOpenOpenOpen2</a></p>
+    <div id="dialog2" style="display:none;">
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXXXXXXXX</p>
+        <a href="javascript:closeDialog()">&times;</a>
+    </div>
 </div>
-<!-- “≥√ÊÕ‚Ã◊ End -->
+
+<footer id="footer">
+<div id="CopyRight"></div>
+</footer>
+
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var dialogId;
+function openDialog(id){
+    if(dialogId != undefined){closeDialog();}
+    dialogId = id;
+    document.getElementById(dialogId).style.display = "block";
+}
+function closeDialog(){
+    document.getElementById(dialogId).style.display = "none";
+}
+</script>
 </body>
 </html>

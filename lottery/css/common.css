@@ -54,7 +54,7 @@ body { font-size: 120%; -webkit-text-size-adjust: none; text-align:center;backgr
 
 /*section部分*/
 /*index页面 star*/
-.index_sec{background: url(../img/bg_01.png) no-repeat center top;background-size:40.000em auto;padding: 1px 0 0;height:51.938em;}
+.index_sec{padding: 1px 0 0;height:51.938em;}
 .rules_btn{width: 6.625em;height: 6.625em;display: block;margin: 3.313em 0 0 30.938em;text-indent: -9999px;background: url(../img/qipao.png) no-repeat center top;background-size:6.625em auto;}
 .mes{font-size: 2.500em;width:9em;height:5.25em;line-height: 1.2em;margin:6.47523em auto 0;color: #fff;overflow: hidden;}
 /*index页面弹出层样式  start */
@@ -71,7 +71,7 @@ body { font-size: 120%; -webkit-text-size-adjust: none; text-align:center;backgr
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0d7f3), color-stop(100%,#75aed6));
 }
 /*page01 star*/
-.page01_sec{background: url(../img/wabao_bg.png) no-repeat center top;background-size: 40em auto;padding: 1px 0;height: 51.938em;}
+.page01_sec{padding: 1px 0;height: 51.938em;}
 .gallery_wrap{width: 30.375em;height:30.375em;margin: 3.188em auto 0;overflow: hidden;position: relative;}
 #gallery a{position:absolute;left:0;top:0;width: 100%;height: 100%;list-style: none;}
 #gallery img{background: #474747;}
@@ -107,7 +107,7 @@ p.chance{font-size:2.250em;width: 76.4375%;line-height:1.8em !important;margin:a
 }
 
 /*page02 star*/
-.page02_sec{background: url(../img/wabao_bg.png) no-repeat center top;background-size: 40em auto;padding: 1px 0 0;height: 51.938em;}
+.page02_sec{padding: 1px 0 0;height: 51.938em;}
 .gift{width: 29.439em;height:29.439em;margin: 3.125em auto 0;}
 .qianlan{background: #d1e6f4;border: 1px solid #d1e6f4;}
 .shenlan{background: #a5c1e8;border: 1px solid #a5c1e8;}
