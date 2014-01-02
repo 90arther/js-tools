@@ -57,6 +57,7 @@
     var popID;
     /*显示弹出层JS代码*/
     function TGDialogS(popid) {
+        if(popID != undefined){hideDialogS();}
         popID = popid;
         document.getElementById(popID).style.display = "block"; //显示
     }
