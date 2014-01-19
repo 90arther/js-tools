@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="author" content="90Arther"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>90Arther website</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.5.0/build/cssreset/reset-min.css"/>
+    <link rel="shortcut icon" href="http://90arther.net/img/logo.ico" type="image/x-icon"/>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<title></title>
+</head>
+<body>
+<button id="copy">copy</button>
+</body>
+<script type="text/javascript">
+var EventUtil = {
+    addHandler: function (element, type, handler) {
+        if (element.addEventListener) {
+            element.addEventListener(type, handler, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + type, handler);
+        } else {
+            element["on" + type] = handler;
+        }
+    },
+    getEvent: function (event) {
+        return event ? event : window.event;
+    },
+    getClipboardText: function (event) {
+        var clipboardData = (event.clipboardData || window.clipboardData);
+        return clipboardData.getData("text");
+    },
+    setClipboardText: function (event, value) {
+        if (event.clipboardData) {
+            return event.clipboardData.setData("text/plain", value);
+        } else if (window.clipboardData) {
+            return window.clipboardData.setData("text", value);
+        }
+    },
+    preventDefault: function (event) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    }
+};
+var textbox = document.getElementById('copy');
+EventUtil.addHandler(textbox, "copy", function (event) {
+    event = EventUtil.getEvent(event);
+    EventUtil.preventDefault(event);
+    EventUtil.setClipboardText(event, "Hello world!");
+  alert('ok');
+});
+</script>
+</html>
